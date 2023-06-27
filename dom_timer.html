@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;}
+        .main{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items:center;
+        }
+        .center{
+            width: 30vw;
+            height: 30vh;
+            background-color: navy;
+            color: white;
+            display: grid;
+            place-items:center;
+        }
+        h2,h4{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="center" id="center">
+            <h2 id="heading1">Time in New Year 2023</h2>
+            <h3 id="heading2"></h3>
+        </div>
+    </div> 
+    <script>
+        var target = new Date(2023,0)
+        var heading1 = document.getElementById("heading1")
+        var heading2 = document.getElementById("heading2")
+        var time = setInterval(()=>{
+            let current = new Date()
+            let difference = target-current
+            if(difference>0){
+                let day = parseInt(difference/(1000*60*60*24))
+                let hour = parseInt(difference%(1000*60*60*24)/(1000*60*60))
+                let minute = parseInt(difference%(1000*60*60)/(1000*60))
+                let second = parseInt(difference%(1000*60)/(1000))
+                let msg = ""
+                if(day<10)
+                msg=msg+"0"
+                msg=msg+day+" : "
+
+                if(hour<10)
+                msg=msg+"0"
+                msg=msg+hour+" : "
+
+                if(minute<10)
+                msg=msg+"0"
+                msg=msg+minute+" : "
+
+                if(second<10)
+                msg=msg+"0"
+                msg=msg+second
+                heading2.innerHTML=msg
+            }
+            else{
+                let center = document.getElementById("center")
+                heading1.innerHTML="Happy New Year 2023"
+                heading2.innerHTML=""
+                center.removeChild(heading2)
+
+                clearInterval(time)
+            }    
+        },1000)
+    </script>   
+</body>
+</html>

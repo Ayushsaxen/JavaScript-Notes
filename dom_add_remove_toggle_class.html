@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 40vw;
+            background-color: green;
+            color: white;
+            padding-top: 10px 0;
+            font-size: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .center{
+            height: 30vh;
+            background-color: navy;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main" id="main">
+        Menu
+        <div class="center hide" id="menu">
+            Menu Item
+        </div>
+    </div>
+    <script>
+        var main = document.getElementById("main")
+        main.addEventListener("click",()=>{
+            var menu = document.getElementById("menu")
+            menu.classList.toggle("hide")
+        })
+    </script>
+</body>
+</html>

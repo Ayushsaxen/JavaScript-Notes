@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+        }
+        .center{
+            width: 50vw;
+            height: 50vh;
+            margin: auto;
+        }
+        h4{
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin: 5px 0;
+        }
+        input{
+            width: 99%;
+            padding: 10px 0;
+            margin-top: 5px;
+            color: navy;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="center">
+            <h4>Keybord Event Example</h4>
+            <h4 id="heading">Name : </h4>
+            <input type="text" id="input" placeholder="Enter Your Name : " onkeydown="fun1()" onkeypress="fun2()" onkeyup="fun3()">
+        </div>
+    </div>
+    <script>
+        var input = document.getElementById("input")
+        function fun1(){
+            input.style.backgroundColor="cyan"
+            console.log("On Key Down Event");
+
+        }
+        function fun2(){
+            input.style.backgroundColor="aqua"
+            console.log("On Key Press Event");
+        }
+        function fun3(){
+            input.style.backgroundColor="hotpink"
+            console.log("On Key Up Event");
+            document.getElementById("heading").innerHTML=`Name : ${input.value}`
+        }
+    </script>
+</body>
+</html>

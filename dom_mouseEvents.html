@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 50vw;
+            height: 50vh;
+            background-color: blueviolet;
+            color: white;
+            display: grid;
+            place-items: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main"   
+        onmouseover="fun1()"
+        onmouseenter="fun2()"
+        onmousedown="fun3()"
+        onmouseup="fun4()"
+        onclick="fun5()"
+        onmousemove="fun6()"
+        onmousewheel="fun7()"
+        onmouseout="fun8()"
+        onmouseleave="fun9()"
+        ondblclick="fun10()"
+    >
+        No Event
+    </div>
+    <script>
+        var main = document.querySelector(".main")
+        function fun1(){
+            main.style.backgroundColor="green"
+            main.style.color="white"
+            console.log("Mouse Over Event")
+            main.innerHTML="Mouse Over Event"
+        }
+        function fun2(){
+            main.style.backgroundColor="red"
+            main.style.color="white"
+            console.log("Mouse Enter Event")
+            main.innerHTML="Mouse Enter Event"
+        }
+        function fun3(){
+            main.style.backgroundColor="purple"
+            main.style.color="white"
+            console.log("Mouse Down Event")
+            main.innerHTML="Mouse Down Event"
+        }
+        function fun4(){
+            main.style.backgroundColor="black"
+            main.style.color="white"
+            console.log("Mouse UP Event")
+            main.innerHTML="Mouse UP Event"
+        }
+        function fun5(){
+            main.style.backgroundColor="navy"
+            main.style.color="white"
+            console.log("Mouse Click Event")
+            main.innerHTML="Mouse Click Event"
+        }
+        function fun6(){
+            main.style.backgroundColor="cyan"
+            main.style.color="navy"
+            console.log("Mouse Move Event")
+            main.innerHTML="Mouse Move Event"
+        }
+        function fun7(){
+            main.style.backgroundColor="orangered"
+            main.style.color="white"
+            console.log("Mouse Wheel Event")
+            main.innerHTML="Mouse Wheel Event"
+        }
+        function fun8(){
+            main.style.backgroundColor="indigo"
+            main.style.color="white"
+            console.log("Mouse Out Event")
+            main.innerHTML="Mouse Out Event"
+        }
+        function fun9(){
+            main.style.backgroundColor="blueviolet"
+            main.style.color="white"
+            console.log("Mouse Leave Event")
+            main.innerHTML="Mouse Leave Event"
+        }
+        function fun10(){
+            main.style.backgroundColor="blue"
+            main.style.color="white"
+            console.log("Mouse Double Click Event")
+            main.innerHTML="Mouse Double Click Event"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .center {
+            width: 50vw;
+            height: 50vh;
+            margin: auto;
+        }
+
+        h4 {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin: 5px 0;
+        }
+
+        input {
+            width: 99%;
+            padding: 10px 0;
+            margin-top: 5px;
+            color: navy;
+        }
+        button {
+            background-color: green;
+            color: white;
+            width: 100%;
+            padding: 10px 0;
+            margin-top: 5px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <h4>Form Event Example</h4>
+            <h4 id="nameh">name : </h4>
+            <h4 id="emailh">email : </h4>
+            <h4 id="phoneh">phone : </h4>
+            <h4 id="cityh">city : </h4>
+            <h4 id="stateh">state : </h4>
+            <form onsubmit="postData();return false" name="myform">
+                <input type="text" name="name" id="name" placeholder="Enter Your Name : " onfocus="fun1('name')"
+                    onblur="fun2('name')" onchange="fun3('name')">
+                <input type="text" name="email" id="email" placeholder="Enter Your Email : " onfocus="fun1('email')"
+                    onblur="fun2('email')" onchange="fun3('email')">
+                <input type="text" name="phone" id="phone" placeholder="Enter Your Phone : " onfocus="fun1('phone')"
+                    onblur="fun2('phone')" onchange="fun3('phone')">
+                <input type="text" name="city" id="city" placeholder="Enter Your City : " onfocus="fun1('city')"
+                    onblur="fun2('city')" onchange="fun3('city')">
+                <input type="text" name="state" id="state" placeholder="Enter Your State : " onfocus="fun1('state')"
+                    onblur="fun2('state')" onchange="fun3('state')">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function fun1(data) {
+            let input = document.getElementById(data)
+            input.style.backgroundColor="hotpink"
+            input.style.color="navy"
+        }
+        function fun2(data) {
+            let input = document.getElementById(data)
+            input.style.backgroundColor="white"
+            input.style.color="black"
+        }
+        function fun3(data) {
+            let input = document.getElementById(data)
+            let heading = document.getElementById(`${data}h`)
+            heading.innerHTML = `${data} : ${input.value}`
+        }
+        function postData(){
+            alert(`
+                Name : ${document.forms['myform']['name'].value}
+                Email : ${document.forms['myform']['email'].value}
+                Phone : ${document.forms['myform']['phone'].value}
+                City : ${document.forms['myform']['city'].value}
+                State : ${document.forms['myform']['state'].value}
+                `                
+            )
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .center{
+            width: 70%;
+            height: 70%;
+        }
+        p{
+            background-color: green;
+            color: white;
+            text-align: justify;
+            padding: 15px;
+        }
+        button{
+            background-color: navy;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <button onclick="fun()">Change/Reset</button>
+            <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor temporibus blanditiis earum,
+                fugit itaque suscipit distinctio quas! Voluptate blanditiis expedita architecto quasi id. Aliquid
+                doloribus id libero accusamus tenetur perferendis illo? Possimus, perferendis amet optio, incidunt
+                provident pariatur, expedita officia qui ad tempora saepe illo dolor. Saepe quam blanditiis, perferendis
+                expedita inventore reprehenderit. Dicta, rem. Ut culpa molestiae eius asperiores adipisci. Eum nam vero,
+                non expedita quod earum eligendi odio totam officia eveniet error, eos quos delectus explicabo quam
+                alias ipsam ratione amet fugit consequatur. Tempore ipsa possimus nobis aut modi enim, impedit quidem
+                repudiandae velit at non magni iure excepturi labore rem commodi quas animi mollitia repellendus eius
+                perferendis. Dolorem quae inventore recusandae. Aspernatur odio at sunt? </p>
+        </div>
+    </div>
+    <script>
+        var p = document.getElementById("para")
+        var text1 = "Repellendus et nihil dolores cupiditate doloremque saepe porro, eos nulla error harum provident ad ipsam ipsum, perspiciatis quas ullam soluta, aut animi iure laudantium tenetur cum odio enim sapiente! Iusto sint voluptate corrupti cum facere sunt magni! Accusantium omnis qui temporibus dignissimos nulla et architecto, natus eius amet aliquid minima officiis perspiciatis facere molestiae nisi laudantium exercitationem quos alias ut quisquam ab reprehenderit. Quod iure a fugit pariatur dicta placeat quaerat voluptatum assumenda expedita architecto, laudantium laboriosam mollitia illum deserunt omnis voluptatem!"
+        var text2 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor temporibus blanditiis earum, fugit itaque suscipit distinctio quas! Voluptate blanditiis expedita architecto quasi id. Aliquid doloribus id libero accusamus tenetur perferendis illo? Possimus, perferendis amet optio, incidunt provident pariatur, expedita officia qui ad tempora saepe illo dolor. Saepe quam blanditiis, perferendis expedita inventore reprehenderit. Dicta, rem. Ut culpa molestiae eius asperiores adipisci. Eum nam vero, non expedita quod earum eligendi odio totam officia eveniet error, eos quos delectus explicabo quam alias ipsam ratione amet fugit consequatur. Tempore ipsa possimus nobis aut modi enim, impedit quidem repudiandae velit at non magni iure excepturi labore rem commodi quas animi mollitia repellendus eius perferendis. Dolorem quae inventore recusandae. Aspernatur odio at sunt?"
+        var ch = 1
+        function fun(){
+            if(ch==1){
+                p.innerHTML=text1
+                ch=2
+                p.style.backgroundColor="orangered"
+            }
+            else{
+                p.innerHTML=text2
+                ch=1
+                p.style.backgroundColor="green"
+            }
+        }
+    </script>
+</body>
+
+</html>

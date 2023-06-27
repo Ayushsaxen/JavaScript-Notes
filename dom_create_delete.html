@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+        }
+        .center{
+            width: 70%;
+            margin: auto;
+        }
+        .first{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        button{
+            background-color: green;
+            color: white;
+            padding: 10px;
+            width: 49%;
+            border: none;
+        }
+        p{
+            background-color: navy;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <div class="first">
+                <button onclick="fun1()">Create</button>
+                <button onclick="fun2()">Delete</button>
+            </div>
+            <div class="second" id="second">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var second = document.getElementById("second")
+        var count = 1
+        function fun1(){
+            var p = document.createElement("p")
+            p.innerHTML = "This is Paragraph Tag Number "+count
+            count++
+            second.appendChild(p)
+        }
+        function fun2(){
+            if(second.childNodes.length>1){
+                second.removeChild(second.childNodes[1])
+            }
+        }
+    </script>
+</body>
+
+</html>
